@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TODOアプリ</h1>
+        </header>
+
+        <div class="add-task-section">
+            <h2>新しいタスクを追加</h2>
+            <form id="add-task-form">
+                <div class="form-group">
+                    <input type="text" id="task-input" placeholder="タスク名" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="priority-select">
+                            <option value="low">優先度: 低</option>
+                            <option value="medium" selected>優先度: 中</option>
+                            <option value="high">優先度: 高</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" id="due-date-input">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="category-input" placeholder="カテゴリ/タグ">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-add">追加</button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <h3>フィルター</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全て</button>
+                <button class="filter-btn" data-filter="active">未完了</button>
+                <button class="filter-btn" data-filter="completed">完了済み</button>
+            </div>
+
+            <div class="category-filter">
+                <select id="category-filter">
+                    <option value="all">全カテゴリ</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <h3>タスクリスト</h3>
+            <div id="tasks-container"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
